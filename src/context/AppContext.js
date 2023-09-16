@@ -31,7 +31,7 @@ export const AppReducer = (state, action) => {
                 }
             }
         case "DECREASE_EXPENSE":
-             let Current_Budget = state.expenses.reduce((previousExp, currentExp) => {
+            let Current_Budget = state.expenses.reduce((previousExp, currentExp) => {
                 return previousExp + currentExp.cost
             }, 0);
             Current_Budget = Current_Budget - action.payload.cost;
@@ -45,7 +45,7 @@ export const AppReducer = (state, action) => {
                 return {
                     ...state,
                 }
-            } 
+            }
 
             else {
                 alert('tes');
@@ -110,7 +110,12 @@ const initialState = {
         { id: "Human Resource", name: 'Human Resource', cost: 40 },
         { id: "IT", name: 'IT', cost: 500 },
     ],
-    currency: '£'
+    currency: [
+        { pound: '£' },
+        { dollar: '$' },
+        { ruppee: "₹" },
+        { euro: '€' }
+    ]
 };
 
 // 2. Creates the context this is the thing our components import and use to get the state

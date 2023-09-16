@@ -7,6 +7,7 @@ const AllocationForm = (props) => {
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
     const [action, setAction] = useState('');
+    const [selectedOption, setSelectedOption] = useState("Currency")
 
     const submitEvent = () => {
         if (cost > remaining) {
@@ -64,9 +65,9 @@ const AllocationForm = (props) => {
                         style={{ marginLeft: '2rem', size: 10 }}
                         onChange={(event) => setCost(event.target.value)}>
                     </input>
-                    <select>
+                    <select value={selectedOption} onChange={e => setSelectedOption(e.target.value)}>
+                        <option value="£ Pound">£ Pound</option>
                         <option value="$ Dollar">$ Dollar</option>
-                        <option defaultValue value="Currency (£ Pound)">Currency (£ Pound)</option>
                         <option value="€ Euro">€ Euro</option>
                         <option value="₹ Ruppee">₹ Ruppee</option>
                     </select>

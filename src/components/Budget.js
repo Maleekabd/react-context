@@ -16,6 +16,9 @@ const Budget = () => {
             alert(`The value cannot exeed remaining funds £ ${totalExpenses}`)
             return budget;
         }
+        else if(newBudget <= totalExpenses){
+            alert("You cannot reduce the budget value lower than the spending")
+        }
     }
 
 
