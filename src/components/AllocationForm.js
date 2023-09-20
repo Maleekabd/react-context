@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 
 const AllocationForm = (props) => {
-    const { dispatch, remaining } = useContext(AppContext);
+    const { dispatch, remaining, currency } = useContext(AppContext);
 
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
@@ -66,7 +66,7 @@ const AllocationForm = (props) => {
                         onChange={(event) => setCost(event.target.value)}>
                     </input>
                     <select value={selectedOption} onChange={e => setSelectedOption(e.target.value)}>
-                        <option value="£ Pound">£ Pound</option>
+                        <option value="£ Pound">{currency} Pound</option>
                         <option value="$ Dollar">$ Dollar</option>
                         <option value="€ Euro">€ Euro</option>
                         <option value="₹ Ruppee">₹ Ruppee</option>
